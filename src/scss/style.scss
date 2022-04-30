@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+@import "reset.scss";
+@import "vars.scss";
+@import "templates.scss";
+
+// Basic styles start
+[class*="__container"] {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @media screen and (max-width: $laptop) {
+    max-width: 970px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    max-width: 750px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    max-width: 540px;
+    padding: 0 30px;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 7px -4px $neutral-blue;
+
+  &__red {
+    background-color: $primary-red;
+    color: #fff;
+    padding: 10px 35px;
+  }
+
+  &__opc {
+    width: 100%;
+    box-shadow: none;
+    border: 2px solid #fff;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__blue {
+    background-color: $primary-blue;
+    color: #fff;
+    transition: 0.3s all;
+    border: 2px solid transparent;
+
+    &:hover {
+      background: #fff;
+      color: $primary-blue;
+      border-color: $primary-blue;
+    }
+  }
+
+  &__gray {
+    background: hsl(232deg 8% 80%);
+    transition: 0.3s all;
+    color: $neutral-dark-blue;
+    border: 2px solid transparent;
+
+    &:hover {
+      background: #fff;
+      color: $neutral-dark-blue;
+      border-color: $neutral-dark-blue;
+    }
+  }
+}
+
+svg {
+  pointer-events: none;
+}
+
+// Basic styles end
+
+// Header styles start
+.header {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  &__container {
+    @extend %space-between;
+    min-height: 150px;
+
+    @media screen and (max-width: $mobile) {
+      min-height: 100px;
+    }
+  }
+
+  &__menu {
+    @extend %flex-center;
+
+    &--nav {
+      li {
+        display: inline-block;
+        margin-right: 45px;
+
+        @media screen and (max-width: $tablet) {
+          margin-right: 25px;
+        }
+
+        a {
+          color: $neutral-dark-blue;
+          transition: 0.3s all;
+
+          &:hover {
+            color: $primary-red;
+          }
+        }
+      }
+    }
+    .btn {
+      border: 2px solid transparent;
+      transition: 0.3s all;
+      &:hover {
+        background-color: #fff;
+        border: 2px solid $primary-red;
+        color: $primary-red;
+      }
+    }
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  .mobile__menu--btn {
+    display: none;
+
+    @media screen and (max-width: $mobile) {
+      display: block;
+    }
+  }
+
+  .mobile__menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -100%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: $neutral-dark-blue;
+    padding: 35px 30px;
+    transition: 0.5s all;
+
+    &.opened {
+      left: 0;
+    }
+
+    &--header {
+      @extend %flex-center;
+      margin-bottom: 30px;
+    }
+
+    &--nav {
+      text-align: center;
+
+      nav {
+        margin-bottom: 25px;
+      }
+
+      li {
+        a {
+          width: 100%;
+          padding: 20px 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          color: #fff;
+          font-weight: 400;
+        }
+
+        &:last-child a {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+
+    &--footer {
+      display: flex;
+      align-items: end;
+      flex: 1 0 auto;
+      align-self: center;
+
+      a:first-child {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+// Header styles end
+
+// Bookmark manager section styles start
+.bookmark__manager {
+  padding: 60px 0;
+
+  &__container {
+    @extend %space-between;
+  }
+
+  &--body {
+    flex: 0 1 43%;
+
+    h1 {
+      font-weight: 400;
+      font-size: 48px;
+    }
+
+    p {
+      color: $neutral-blue;
+      font-weight: 400;
+      line-height: 24px;
+      margin: 30px 0;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 15px;
+      padding: 15px 35px;
+
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &--img {
+    flex: 0 1 57%;
+
+    img {
+      transform: translateX(115px);
+    }
+  }
+}
+// Bookmark manager section styles end
