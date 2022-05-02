@@ -1,5 +1,5 @@
 .features {
-  margin-bottom: 60px;
+  margin-bottom: 120px;
   padding-bottom: 60px;
   position: relative;
 
@@ -185,5 +185,8 @@
       bottom: 440px;
       left: -670px;
     }
+  }
+  @media screen and (max-width: 576px) {
+    margin-bottom: 60px;
   }
 }
