@@ -3,9 +3,12 @@
     <span class="members__count">35,000+ already joined</span>
     <div class="contact__us--form">
       <h3>Stay up-to-date with what we’re doing</h3>
-      <form action="">
-        <input type="text" placeholder="Enter your email address">
-        <button class="btn btn__red">Contact Us</button>
+      <form action="#" method="post">
+        <label for="">
+          <input type="text" name="email" placeholder="Enter your email address">
+          <span class="error__message">Whoops, make sure it's an email</span>
+        </label>
+        <button class="btn btn__red" name="submit" type="submit">Contact Us</button>
       </form>
     </div>
   </div>

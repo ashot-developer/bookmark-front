@@ -3,13 +3,14 @@ flsFunctions.isWebp();
 
 // Mobile menu script
 document.body.onclick = (e) => {
-  e.preventDefault();
   const menu = document.querySelector(".mobile__menu");
 
   if (e.target.classList.contains("mobile__menu--btn")) {
+    e.preventDefault();
     menu.classList.add("opened");
     console.log(menu.classList);
   } else if (e.target.classList.contains("close__menu")) {
+    e.preventDefault();
     menu.classList.remove("opened");
   }
 };
@@ -70,3 +71,31 @@ function toggleFaq(e) {
 
   console.log(bodyHeightList);
 }
+
+// Contact us form
+// console.log(document.querySelector('.contact__us form'));
+// [...document.querySelector('.contact__us form')].map(form => form.addEventListener('submit', function(e){
+//   e.preventDefault();
+//   const formData = new FormData(e.target);
+//   const formProps = Object.fromEntries(formData);
+//   console.log('no');
+// }));
+
+document.querySelector(".contact__us form").onsubmit = function (e) {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const formProps = Object.fromEntries(formData);
+  let isEmail = String(formProps.email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+
+  if (formProps.email == "" || !isEmail) {
+    this.classList.add("invalid");
+  } else {
+    this.classList.remove("invalid");
+  }
+
+  console.log(formProps);
+};
