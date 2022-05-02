@@ -74,6 +74,24 @@ svg {
   pointer-events: none;
 }
 
+.sections__titles {
+  max-width: 545px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  h3 {
+    font-weight: 500;
+    font-size: 32px;
+  }
+
+  p {
+    line-height: 28px;
+    margin: 25px 0 35px 0;
+    color: $neutral-blue;
+  }
+}
+
 // Basic styles end
 
 // Header styles start
@@ -146,6 +164,7 @@ svg {
     background-color: $neutral-dark-blue;
     padding: 35px 30px;
     transition: 0.5s all;
+    z-index: 999;
 
     &.opened {
       left: 0;
@@ -194,4 +213,7 @@ svg {
 // Header styles end
 
 // Bookmark manager section
-@import './sections/bookmark-manager.scss';
+@import "./sections/bookmark-manager.scss";
+
+// Features section
+@import "./sections/features.scss";
