@@ -41,3 +41,32 @@ function changeTab(e) {
     .forEach((tabContent) => tabContent.classList.remove("active"));
   tabContainer.querySelector(tabId).classList.add("active");
 }
+
+// Faq section
+const faqContainer = document.querySelector(".faq__row--list");
+let bodyHeightList = [...faqContainer.querySelectorAll(".faq__body")].map(
+  (body) => body.clientHeight
+);
+
+[...faqContainer.querySelectorAll("li .faq__header")].map((item) =>
+  item.addEventListener("click", toggleFaq)
+);
+[...faqContainer.querySelectorAll(".faq__body")].map(
+  (body) => (body.style.maxHeight = 0)
+);
+
+function toggleFaq(e) {
+  let index = this.getAttribute("data-index");
+  let parentLi = this.closest("li");
+
+  if (!parentLi.classList.contains("active")) {
+    parentLi.querySelector(".faq__body").style.maxHeight =
+      bodyHeightList[index - 1] + 25 + "px";
+  } else {
+    parentLi.querySelector(".faq__body").style.maxHeight = 0 + "px";
+  }
+
+  parentLi.classList.toggle("active");
+
+  console.log(bodyHeightList);
+}
