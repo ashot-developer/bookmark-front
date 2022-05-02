@@ -1,0 +1,79 @@
+.extension {
+  position: relative;
+  margin: 30px 0 150px 0;
+
+  &__container {
+    max-width: 930px;
+  }
+  
+  &__row {
+    @extend %space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+  }
+
+  &__box {
+    width: calc(33.3% - 20px);
+    border-radius: 15px;
+    box-shadow: 0px 3px 8px -4px $neutral-blue;
+    text-align: center;
+
+    &:nth-child(2) {
+      margin-top: 30px;
+
+      @media screen and (max-width: $mobile) {
+        margin-top: 0;
+      }
+    }
+
+    &:last-child {
+      margin-top: 60px;
+      
+      @media screen and (max-width: $mobile) {
+        margin-top: 0;
+      }
+    }
+
+    &--header {
+      padding: 30px 0 35px 0;
+      border-bottom: 4px solid transparent;
+      border-image-source: url(../../img/bg-dots.svg);  
+      border-image-slice: 17;
+
+      h4 {
+        margin: 30px 0 10px 0;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      span {
+        color: $neutral-blue;
+        font-size: 14px;
+      }
+
+    }
+
+    &--footer {
+      padding: 25px;
+
+      .btn {
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: calc(50% - 15px);
+      margin-bottom: 30px;
+    }   
+
+    @media screen and (max-width: 576px) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 60px;
+  }
+}

@@ -74,6 +74,24 @@ svg {
   pointer-events: none;
 }
 
+.sections__titles {
+  max-width: 545px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  h3 {
+    font-weight: 500;
+    font-size: 32px;
+  }
+
+  p {
+    line-height: 28px;
+    margin: 25px 0 35px 0;
+    color: $neutral-blue;
+  }
+}
+
 // Basic styles end
 
 // Header styles start
@@ -143,9 +161,10 @@ svg {
     top: 0%;
     width: 100%;
     height: 100%;
-    background-color: $neutral-dark-blue;
+    background-color: $neutral-dark-blue-opc;
     padding: 35px 30px;
     transition: 0.5s all;
+    z-index: 999;
 
     &.opened {
       left: 0;
@@ -170,12 +189,17 @@ svg {
           border-top: 1px solid rgba(255, 255, 255, 0.2);
           color: #fff;
           font-weight: 400;
+          
         }
 
         &:last-child a {
           border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
       }
+    }
+
+    .btn {
+      margin-bottom: 15px;
     }
 
     &--footer {
@@ -193,46 +217,108 @@ svg {
 
 // Header styles end
 
-// Bookmark manager section styles start
-.bookmark__manager {
-  padding: 60px 0;
+// Bookmark manager section
+@import "./sections/bookmark-manager.scss";
+
+// Features section
+@import "./sections/features.scss";
+
+// Extension section
+@import "./sections/extension.scss";
+
+// FAQ section
+@import "./sections/faq.scss";
+
+// Contact us section
+@import "./sections/contact-us.scss";
+
+// Footer
+
+.footer {
+  background-color: $neutral-dark-blue;
 
   &__container {
     @extend %space-between;
+    min-height: 90px;
+
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+    }
   }
 
-  &--body {
-    flex: 0 1 43%;
+  &__logo {
+    margin-right: 60px;
 
-    h1 {
-      font-weight: 400;
-      font-size: 48px;
+    @media screen and (max-width: $mobile) {
+      margin-right: 0;
     }
+  }
 
-    p {
-      color: $neutral-blue;
-      font-weight: 400;
-      line-height: 24px;
-      margin: 30px 0;
+  &__menu {
+    @extend %space-between;
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
     }
+  }
 
-    a {
-      font-weight: 500;
-      font-size: 15px;
-      padding: 15px 35px;
+  &__menu--nav {
+    li {
+      display: inline-block;
+      margin-right: 40px;
 
-      &:first-child {
-        margin-right: 15px;
+      a {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 1px;
+        transition: .3s all;
+
+        &:hover {
+          color: $primary-red;
+        }
+      }
+
+      @media screen and (max-width: $mobile) {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 25px;
       }
     }
-  }
 
-  &--img {
-    flex: 0 1 57%;
-
-    img {
-      transform: translateX(115px);
+    @media screen and (max-width: $mobile) {
+      margin: 35px 0;
     }
   }
+
+  &__social {
+    li {
+      display: inline-block;
+
+      &:first-child {
+        margin-right: 35px;
+      }
+
+      a {
+        svg{
+          transition: .3s all;
+          color: #fff;
+        }
+
+        &:hover svg{
+          color: $primary-red;
+        }
+      }
+      
+    }
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 25px 0;
+    text-align: center;
+  }
 }
-// Bookmark manager section styles end
