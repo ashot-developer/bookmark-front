@@ -226,3 +226,94 @@ svg {
 
 // Contact us section
 @import "./sections/contact-us.scss";
+
+// Footer
+
+.footer {
+  background-color: $neutral-dark-blue;
+
+  &__container {
+    @extend %space-between;
+    min-height: 90px;
+
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    margin-right: 60px;
+
+    @media screen and (max-width: $mobile) {
+      margin-right: 0;
+    }
+  }
+
+  &__menu {
+    @extend %space-between;
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__menu--nav {
+    li {
+      display: inline-block;
+      margin-right: 40px;
+
+      a {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 1px;
+        transition: .3s all;
+
+        &:hover {
+          color: $primary-red;
+        }
+      }
+
+      @media screen and (max-width: $mobile) {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 25px;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin: 35px 0;
+    }
+  }
+
+  &__social {
+    li {
+      display: inline-block;
+
+      &:first-child {
+        margin-right: 35px;
+      }
+
+      a {
+        svg{
+          transition: .3s all;
+          color: #fff;
+        }
+
+        &:hover svg{
+          color: $primary-red;
+        }
+      }
+      
+    }
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 25px 0;
+    text-align: center;
+  }
+}
