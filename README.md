@@ -1,3 +1,8 @@
-# How to build project?
-1. run npm i.
-2. run gulp.
+## Install the dependencies
+```bash
+npm install
+```
+### Build the app for production
+```bash
+gulp
+```
