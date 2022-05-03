@@ -1,6 +1,7 @@
 import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebp();
 
+window.addEventListener('load', function() {
 // Mobile menu script
 document.body.onclick = (e) => {
   const menu = document.querySelector(".mobile__menu");
@@ -99,3 +100,4 @@ document.querySelector(".contact__us form").onsubmit = function (e) {
 
   console.log(formProps);
 };
+});

@@ -28,5 +28,8 @@
     "sass": "^1.49.8",
     "webpack": "^5.69.1",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gulp-minify-css": "^1.2.4"
   }
 }
