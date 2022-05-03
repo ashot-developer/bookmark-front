@@ -4,6 +4,10 @@
 @import "templates.scss";
 
 // Basic styles start
+html {
+  scroll-behavior: smooth;
+}
+
 [class*="__container"] {
   max-width: 1180px;
   width: 100%;
