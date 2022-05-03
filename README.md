@@ -1,2 +1,3 @@
 # How to build project?
-Just run 'gulp' with terminal.
+1. run npm i.
+2. run gulp.
